@@ -8,6 +8,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.highlight {
+  color: #ffbb2c; /* This color can be adjusted based on your website's theme. */
+  font-weight: bold;
+}
 body {
   font-family: "Open Sans", sans-serif;
   color: #fff;
