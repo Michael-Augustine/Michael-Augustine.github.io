@@ -30,6 +30,16 @@ body::before {
   height: 100vh;
 }
 
+
+
+
+
+#portfolio-details {
+  height: 100%; /* Make the main div take up the full height of the viewport */
+  display: flex; /* Use flexbox to align content */
+  flex-direction: column; /* Stack children vertically */
+}
+
 @media (min-width: 1024px) {
   body::before {
     background-attachment: fixed;
@@ -48,6 +58,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
+
 
 /*--------------------------------------------------------------
 # Header
