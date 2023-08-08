@@ -30,7 +30,22 @@ body::before {
   height: 100vh;
 }
 
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+}
 
+.img-div {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
