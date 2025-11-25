@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Augustine Arockiyadoss - Resume</title>
+    <style>
+        /* Reset and base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Use a slightly smaller base font so the layout fits A4 when printed */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 12px;
+            line-height: 1.32;
+            color: #333;
+            background: white;
+        }
+
+        /* Ensure print uses A4 and a small margin so content doesn't clip */
+        @page {
+            size: A4 portrait;
+            margin: 10mm;
+        }
+
+        .page {
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            margin: 0 auto;
+            padding: 8mm;
+            background: white;
+            page-break-after: always;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+
+        .page:last-child {
+            page-break-after: avoid;
+        }
+
+        /* Slightly narrower left column to give more room on right */
+        .left-column {
+            width: 34%;
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .right-column {
+            width: 66%;
+            padding: 8px;
+            padding-top: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 6px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            font-size: 11px;
+            color: #555;
+        }
+
+    .section { margin-bottom: 12px; }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #2c5aa0;
+            padding-bottom: 2px;
+        }
+
+        .left-section-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .experience-item, .education-item, .project-item, .publication-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child, .education-item:last-child,
+        .project-item:last-child, .publication-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .job-title { font-size: 13px; font-weight: bold; color: #333; margin-bottom: 3px; }
+        .company { font-size: 12px; color: #2c5aa0; font-weight: 600; margin-bottom: 3px; }
+        .duration { font-size: 10px; color: #666; font-style: italic; margin-bottom: 6px; }
+        .description { font-size: 11px; color: #555; line-height: 1.45; }
+
+        .skills-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+        .skill-item { background: #e3f2fd; padding: 6px 8px; border-radius: 4px; font-size: 11px; color: #1976d2; font-weight: 500; }
+
+    .certification-item { margin-bottom: 8px; padding: 6px; background: #f0f8f0; border-radius: 4px; border-left: 3px solid #4caf50; }
+        .certification-name { font-size: 11px; font-weight: bold; color: #333; margin-bottom: 2px; }
+        .certification-org { font-size: 10px; color: #666; margin-bottom: 2px; }
+        .certification-date { font-size: 10px; color: #888; }
+
+        .language-item { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 11px; }
+        .language-name { font-weight: 500; color: #333; }
+        .language-level { color: #666; font-size: 10px; }
+
+        .publication-title { font-size: 12px; font-weight: bold; color: #333; margin-bottom: 3px; }
+        .publication-journal { font-size: 11px; color: #2c5aa0; font-style: italic; margin-bottom: 3px; }
+        .publication-description { font-size: 10px; color: #555; line-height: 1.4; }
+
+        .project-name { font-size: 12px; font-weight: bold; color: #333; margin-bottom: 3px; }
+        .project-duration { font-size: 10px; color: #666; margin-bottom: 6px; }
+        .project-description { font-size: 11px; color: #555; line-height: 1.4; }
+
+    /* Reduce education description slightly so it fits on one page */
+    .education-item .description { font-size: 10px; line-height: 1.35; }
+
+        /* Print-specific tweaks to avoid clipping and reduce sizes slightly */
+        @media print {
+            html, body { margin: 0 !important; padding: 0 !important; width: 100%; height: 100%; }
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page { padding: 8mm; gap: 10px !important; }
+            .left-column, .right-column { padding: 8px !important; }
+            body, .page, .left-column, .right-column { font-size: 95%; }
+        }
+
+        .left-column > .section:first-child { margin-top: 0; padding-top: 0; }
+        .right-column > .header { margin-top: 0; padding-top: 0; }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="left-column">
+            <div class="section">
+                <div class="left-section-title">Contact</div>
+                <div style="font-size: 11px; color: #555; line-height: 1.6;">
+                    <div>📧 Email: pushpamichaeldoss@gmail.com</div>
+                    <div>🔗 LinkedIn: <a href="https://www.linkedin.com/in/meetmrmichael" style="color: #555; text-decoration: none;">www.linkedin.com/in/meetmrmichael</a></div>
+                    <div>💻 GitHub: <a href="https://github.com/Michael-Augustine" style="color: #555; text-decoration: none;">github.com/Michael-Augustine</a></div>
+                    <div>📱 Phone: +886-0916449939</div>
+                    <div>📍 Taipei, Taiwan</div>                    
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="left-section-title">Core Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-item">Fiber Bragg Grating (FBG) Sensors</div>
+                    <div class="skill-item">Machine Learning</div>
+                    <div class="skill-item">Optical Fiber Sensing</div>
+                    <div class="skill-item">Free Space Optics</div>
+                    <div class="skill-item">Optical Network Design</div>
+                    <div class="skill-item">IoT Systems</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="left-section-title">Programming</div>
+                <div class="skills-grid">
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">C++/C</div>
+                    <div class="skill-item">Java</div>
+                    <div class="skill-item">PHP</div>
+                    <div class="skill-item">HTML/CSS</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">MySQL</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="left-section-title">Cloud & Tools</div>
+                <div class="skills-grid">
+                    <div class="skill-item">Amazon Web Services</div>
+                    <div class="skill-item">Microsoft Azure</div>
+                    <div class="skill-item">Ionic Framework</div>
+                    <div class="skill-item">Bootstrap</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="left-section-title">Networking</div>
+                <div class="skills-grid">
+                    <div class="skill-item">CCNA/CCNP</div>
+                    <div class="skill-item">MCSA/MCSE</div>
+                    <div class="skill-item">Computer Networking</div>
+                    <div class="skill-item">Wireless Networks</div>
+                    <div class="skill-item">Hardware & Networking</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="right-column">
+            <div class="header">
+                <div class="name">Michael Augustine Arockiyadoss</div>
+                <div class="title">Ph.D. Researcher in Optical Fiber Sensing & Machine Learning</div>
+                <div class="contact-info">Internet of Things | Fiber Communication | Computer Hardware Enthusiast</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <div class="description">
+                    Ph.D. student in Electro-Optical Engineering with expertise in Optical Fiber Sensing, Machine Learning, and IoT systems. Specializing in innovative solutions for fiber communication and intelligent sensing at National Taipei University of Technology. Proven track record in blending machine learning with fiber optic technology for real-world applications, with publications in IEEE Sensors Journal and hands-on experience in cloud platforms.
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Experience</div>
+                
+                <div class="experience-item">
+                    <div class="job-title">AI Intern</div>
+                    <div class="company">IdeasLab Formosa Co., Ltd.,</div>
+                    <div class="duration">September 2025 - Present | Taipei, Taiwan</div>
+                    <div class="description">
+                        • Working on sensor fusion and signal analysis with mmWave radar, force plates and multi-modal data for sports-tech applications<br>
+                        • Handling hardware including mmWave radar modules, optical camera systems, microcontrollers and calibration setups for full pipeline development<br>
+                        • Building React and Three.js visualizations that display AI outputs such as pose skeletons, 3D swing scenes and force-plate metrics<br>
+                        • Supporting the AI team in developing computer vision models for pose estimation, 3D reconstruction and object tracking, and integrating them into Python APIs for real-time use
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">PhD Research Assistant</div>
+                    <div class="company">National Taipei University of Technology - Optoelectronic Signal Processing Lab</div>
+                    <div class="duration">September 2022 - Present | Taipei, Taiwan</div>
+                    <div class="description">
+                        • Conducting advanced research on Fiber Bragg Grating (FBG) sensors for temperature and strain detection<br>
+                        • Developing innovative machine learning technologies to enhance fiber sensor systems<br>
+                        • Specializing in Fiber Optic Sensors, Optical Network Design, and Free Space Optics<br>
+                        • Published multiple peer-reviewed papers in IEEE Sensors Journal and Electronics
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-title">Laboratory Assistant</div>
+                    <div class="company">St. Joseph's College - Jerome D'Souza Center for ICT</div>
+                    <div class="duration">June 2017 - March 2022 | Tiruchirappalli, India</div>
+                    <div class="description">
+                        • Maintained Internet facilities across campus under Earn While Learn Scheme<br>
+                        • Supported campus digital transformation initiatives and website management<br>
+                        • Contributed to ICT and e-learning tool implementation in educational environment<br>
+                        • Enhanced institutional technological capabilities and infrastructure
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Education</div>
+                
+                <div class="education-item">
+                    <div class="job-title">Doctor of Philosophy (Ph.D.) - Electro-Optical Engineering</div>
+                    <div class="company">National Taipei University of Technology, Taipei, Taiwan</div>
+                    <div class="duration">September 2022 - January 2026 (Exp.) | GPA: 4.0/4.0</div>
+                    <div class="description">
+                        Focus: Fiber Bragg Grating (FBG) sensors, Machine Learning, Fiber Optic Networks
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="job-title">Master of Science - Computer Science</div>
+                    <div class="company">St. Joseph's College (Autonomous), Tiruchirappalli, India</div>
+                    <div class="duration">June 2020 - March 2022 | CGPA: 8.4/10</div>
+                    <div class="description">
+                        Specialization: Wireless Networking, Microsoft Azure, Amazon Web Services
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="job-title">Bachelor of Computer Applications</div>
+                    <div class="company">St. Joseph's College (Autonomous), Tiruchirappalli, India</div>
+                    <div class="duration">June 2017 - March 2020</div>
+                    <div class="description">
+                        Focus: Computer Hardware, Networking, Programming Fundamentals
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 2 -->
+    <div class="page">
+        <div class="left-column">
+            <div class="section">
+                <div class="left-section-title">Key Certifications</div>
+                
+                <div class="certification-item">
+                    <div class="certification-name">EF SET English Certificate C1 Advanced</div>
+                    <div class="certification-org">EF SET</div>
+                    <div class="certification-date">March 2025</div>
+                </div>
+                
+                <div class="certification-item">
+                    <div class="certification-name">Understanding Data Science</div>
+                    <div class="certification-org">DataCamp</div>
+                    <div class="certification-date">April 2023</div>
+                </div>
+                
+                <div class="certification-item">
+                    <div class="certification-name">Cloud Infrastructure and Services</div>
+                    <div class="certification-org">ICT Academy of Tamil Nadu</div>
+                    <div class="certification-date">December 2019</div>
+                </div>
+                
+                <div class="certification-item">
+                    <div class="certification-name">Cloud Services and Servers</div>
+                    <div class="certification-org">SYSTECH</div>
+                    <div class="certification-date">August 2019</div>
+                </div>
+                
+                <div class="certification-item">
+                    <div class="certification-name">Introduction to Cloud Computing</div>
+                    <div class="certification-org">Udemy</div>
+                    <div class="certification-date">September 2018</div>
+                </div>
+                
+                <div class="certification-item">
+                    <div class="certification-name">Computer Networks & Networking</div>
+                    <div class="certification-org">Udemy</div>
+                    <div class="certification-date">August 2018</div>
+                </div>
+                
+                <div class="certification-item">
+                    <div class="certification-name">Windows Server 2012R2</div>
+                    <div class="certification-org">Udemy</div>
+                    <div class="certification-date">March 2020</div>
+                </div>
+                
+                <div class="certification-item">
+                    <div class="certification-name">Diploma in Computer Applications</div>
+                    <div class="certification-org">TCEDS</div>
+                    <div class="certification-date">January 2014</div>
+                </div>
+                
+                <div class="section">
+                    <div class="left-section-title">Languages</div>
+                    
+                    <div class="certification-item" style="background: #f0f4ff; border-left: 3px solid #4a90e2;">
+                        <div class="certification-name" style="color: #2c3e50;">English</div>
+                        <div class="certification-org" style="color: #34495e;">Professional Proficiency</div>                    
+                    </div>
+                    
+                    <div class="certification-item" style="background: #f0f4ff; border-left: 3px solid #4a90e2;">
+                        <div class="certification-name" style="color: #2c3e50;">Tamil</div>
+                        <div class="certification-org" style="color: #34495e;">Native Proficiency</div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-column">
+            <div class="section">
+                <div class="section-title">Key Publications</div>
+                
+                <div class="publication-item">
+                    <div class="publication-title">
+                        Spectral Demodulation of Mixed-Linewidth FBG Sensor Networks Using Cloud-Based Deep Learning for Land Monitoring
+                    </div>
+                    <div class="publication-journal">Sensors, September 2025</div>
+                    <div class="publication-description">
+                        Cloud-based deep learning framework for spectral demodulation in mixed-linewidth FBG sensor networks for land monitoring, resolving overlapping spectra in uniform and mixed-linewidth arrays under bidirectional drift.<br>
+                        Developed a Transformer-based model with dual-linewidth reflection–transmission fusion, enabling high-density, self-healing FBG sensing and robust demodulation under severe spectral overlap conditions.
+                    </div>
+                </div>
+
+
+                <div class="publication-item">
+                    <div class="publication-title">Integration of FBGs reflection and transmission spectra for sensing capacity enhancement with Transformer CNN demodulation</div>
+                    <div class="publication-journal">IEEE Sensors Journal, May 2025</div>
+                    <div class="publication-description">
+                        Novel FBG sensor system employing both reflective and transmission wavelengths with Free Space Optics integration. Developed Transformer CNN with positional encoding, achieving 2.24× faster training and 1.43× faster inference compared to traditional models.
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-title">YOLO-v7 Improved with Adan Optimizer: Realizing Orphaned Fiber Bragg Grating to Sense Superimposed Personalized Dynamic Strain</div>
+                    <div class="publication-journal">IEEE Sensors Journal, October 2024</div>
+                    <div class="publication-description">
+                        Innovative motor condition monitoring approach using single FBG sensor with enhanced YOLO-v7 and Adan optimization for detecting abnormal vibrations in multiple running motors.
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-title">Self-Healing Fiber Bragg Grating Sensor System Using Free-Space Optics Link and Machine Learning</div>
+                    <div class="publication-journal">Electronics, March 2024</div>
+                    <div class="publication-description">
+                        Integration of FSO with FBG sensors in self-healing architectures using hybrid autoencoder-CNN approach for enhanced temperature sensing reliability.
+                    </div>
+                </div>
+                
+                <div class="publication-item">
+                    <div class="publication-title">Enhancing Smart City Safety and Utilizing AI Expert Systems for Violence Detection</div>
+                    <div class="publication-journal">Future Internet, January 2024</div>
+                    <div class="publication-description">
+                        AI-powered violence detection system combining YOLO v7 and LSTM networks, achieving 89.5% MAP for violent attack detection and 88.33% accuracy for action classification.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Notable Projects</div>
+                
+                <div class="project-item">
+                    <div class="project-name">Truth Social DApp</div>
+                    <div class="project-duration">April 2023</div>
+                    <div class="project-description">
+                        Blockchain-powered social media application for identifying and preventing fraudulent content using machine learning and smart contracts. Technologies: Gnosis Chain, IPFS, Flask, Machine Learning.
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-name">SJC Parent ERP System</div>
+                    <div class="project-duration">June 2020 - March 2022</div>
+                    <div class="project-description">
+                        Comprehensive mobile application connecting parents with student college activities including attendance tracking, exam results, fee management, and real-time notifications. Technologies: Ionic Framework, MySQL, HTML, CSS.
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Professional Recognition</div>
+                <div class="description">
+                    • <strong>Resource Person</strong> - Faculty Development Programme on "Convergence of Software Systems, AI, and Data Analytics" at Holy Cross College, December 2024<br>
+                    • <strong>Session Topic:</strong> "Integrating Machine Learning with Optical Fiber Sensing and Communication Technologies"<br>
+                    • <strong>Research Impact:</strong> Multiple publications in high-impact IEEE journals with innovative approaches to fiber optic sensing
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
